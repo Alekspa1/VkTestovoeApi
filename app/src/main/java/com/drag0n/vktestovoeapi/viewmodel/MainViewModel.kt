@@ -30,6 +30,7 @@ class MainViewModel @Inject constructor(
 
 
     fun getProduct() = viewModelScope.launch {
+
         try {
             val response = productsApi.getAllProducts(counter)
             if (response.isSuccessful && response.body() != null) {
